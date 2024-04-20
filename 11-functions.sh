@@ -1,7 +1,9 @@
 #!/bin/bash
 
 USERID=$(id -u)
-
+TIMESTAMP=$(date +%F-%H-%M-%S)
+SCRIPT-NAME=$($0 | cut -d "." -f1)
+LOGFILE=/tmp/$SCRIPT-NAME-$IMESTAMP.log
 VALIDATE(){
     echo "Exit status: $1"
     echo "what are you doing: $2"

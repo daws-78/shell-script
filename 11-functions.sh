@@ -5,14 +5,14 @@ TIMESTAMP=$(date +%F-%H-%M-%S)
 SCRIPT-NAME=$($0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPT-NAME-$IMESTAMP.log
 
-VALIDATE(){
+VALIDATE() {
     if [ $1 -ne 0 ]
     then
         echo "$2...FAILURE"
         exit 1
 
     echo "$2...SUCCESS"
-}
+    }
 
 if [ $USERID -ne 0 ]
 then

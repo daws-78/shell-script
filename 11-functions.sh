@@ -2,7 +2,7 @@
 
 USERID=$(id -u)
 TIMESTAMP=$(date +%F-%H-%M-%S)
-SCRIPT-NAME=$($0 | cut -d "." -f1)
+SCRIPT-NAME=$(echo $0 | cut -d "." -f1)
 LOGFILE=/tmp/$SCRIPT-NAME-$IMESTAMP.log
 
 VALIDATE() {

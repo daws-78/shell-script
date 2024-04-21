@@ -14,13 +14,13 @@ VALIDATE(){
        exit 1
      else
         echo -e "$2...$G SUCCESS $N"
-        fi  
+    fi  
 }
 
 if [ $USERID -ne 0 ]
 then
      echo "please run this script with root access."
-     exit 1 #  manually exit if error comes.
+     exit 1
 else  
     echo "you are super user."
 fi
@@ -31,10 +31,9 @@ do
   dnf list installed $i &>>$LOGFILE
   if [ $? -eq 0 ]
   then
-    echo -e "$i already installed...$Y SKIPPING $N"
+      echo -e "$i already installed...$Y SKIPPING $N"
     else
         dnf install $i -y &>>LOGFILE
         VALIDATE $? "Installation of $i"
       fi
-      
-     done 
+    done 

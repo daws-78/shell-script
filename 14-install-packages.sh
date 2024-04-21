@@ -14,7 +14,7 @@ VALIDATE(){
        exit 1
      else
         echo -e "$2...$G SUCCESS $N"
-    fi  
+fi  
 }
 
 if [ $USERID -ne 0 ]
@@ -35,5 +35,5 @@ do
     else
         dnf install $i -y &>>$LOGFILE
         VALIDATE $? "Installation of $i"
-      fi
+fi
     done 

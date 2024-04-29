@@ -1,3 +1,4 @@
+
 #!/bin/bash
 
 COURSE="Devops from current script"
